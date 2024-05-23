@@ -12,23 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Nome_Pattern": {
+    "Titolo": {
       "type": "string"
     },
     "Strategie": {
       "type": "component",
       "repeatable": true,
       "component": "gdpr-knowledge-base.strategie"
-    },
-    "Descrizione_pattern": {
-      "type": "component",
-      "repeatable": false,
-      "component": "gdpr-knowledge-base.descrizione-pattern"
-    },
-    "Contesto_pattern": {
-      "type": "component",
-      "repeatable": false,
-      "component": "gdpr-knowledge-base.contesto-pattern"
     },
     "MVC": {
       "type": "component",
@@ -60,10 +50,25 @@
       "repeatable": true,
       "component": "gdpr-knowledge-base.cwe"
     },
-    "Esempi": {
+    "Sommario": {
+      "type": "text"
+    },
+    "Descrizione": {
+      "type": "text"
+    },
+    "Esempio": {
+      "type": "text"
+    },
+    "Soluzione": {
+      "type": "text"
+    },
+    "Problema": {
+      "type": "text"
+    },
+    "Pattern": {
       "type": "component",
-      "repeatable": true,
-      "component": "gdpr-knowledge-base.esempi"
+      "repeatable": false,
+      "component": "gdpr-knowledge-base.pattern"
     }
   }
 }

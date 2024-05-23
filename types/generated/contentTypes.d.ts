@@ -375,10 +375,8 @@ export interface ApiGdprKnowledgeBaseGdprKnowledgeBase
     draftAndPublish: true;
   };
   attributes: {
-    Nome_Pattern: Attribute.String;
+    Titolo: Attribute.String;
     Strategie: Attribute.Component<'gdpr-knowledge-base.strategie', true>;
-    Descrizione_pattern: Attribute.Component<'gdpr-knowledge-base.descrizione-pattern'>;
-    Contesto_pattern: Attribute.Component<'gdpr-knowledge-base.contesto-pattern'>;
     MVC: Attribute.Component<'gdpr-knowledge-base.mvc', true>;
     ISO_9241_210: Attribute.Component<'gdpr-knowledge-base.iso-9241-210', true>;
     Articolo_gdpr: Attribute.Component<
@@ -388,7 +386,12 @@ export interface ApiGdprKnowledgeBaseGdprKnowledgeBase
     Pbd: Attribute.Component<'gdpr-knowledge-base.pbd', true>;
     Owasp: Attribute.Component<'gdpr-knowledge-base.owasp', true>;
     Cwe: Attribute.Component<'gdpr-knowledge-base.cwe', true>;
-    Esempi: Attribute.Component<'gdpr-knowledge-base.esempi', true>;
+    Sommario: Attribute.Text;
+    Descrizione: Attribute.Text;
+    Esempio: Attribute.Text;
+    Soluzione: Attribute.Text;
+    Problema: Attribute.Text;
+    Pattern: Attribute.Component<'gdpr-knowledge-base.pattern'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

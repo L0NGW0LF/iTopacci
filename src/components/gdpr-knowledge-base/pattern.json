@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_gdpr_knowledge_base_patterns",
+  "info": {
+    "displayName": "Pattern"
+  },
+  "options": {},
+  "attributes": {
+    "Titolo": {
+      "type": "string"
+    },
+    "Sommario": {
+      "type": "text"
+    },
+    "Problema": {
+      "type": "text"
+    },
+    "Descrizione": {
+      "type": "text"
+    },
+    "Esempio": {
+      "type": "text"
+    },
+    "Soluzione": {
+      "type": "text"
+    }
+  }
+}

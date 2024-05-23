@@ -1,15 +1,13 @@
 {
   "collectionName": "components_gdpr_knowledge_base_owasps",
   "info": {
-    "displayName": "OWASP"
+    "displayName": "OWASP",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Nome_OWASP": {
       "type": "string"
-    },
-    "Id_OWASP": {
-      "type": "integer"
     },
     "Descrizione": {
       "type": "text"

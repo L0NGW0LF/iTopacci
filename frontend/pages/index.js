@@ -1,38 +1,36 @@
-import React from 'react'
-import NavBar from '../components/navbar'
+import NavBarHome from '../components/navbarhome';
 
-const Products = () => {
-return (
-    <div className = 'container mx-auto px-4'>
-        <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap w-full mb-20">
-      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Pitchfork Kickstarter Taxidermy</h1>
-        <div class="h-1 w-20 bg-indigo-500 rounded"></div>
-      </div>
-      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
-    </div>
-    <div class="flex flex-wrap -m-4">
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <div class="bg-gray-100 p-6 rounded-lg">
-          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content"></img>
-          <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+
+export default function Home() 
+{
+  return (
+    <div>
+      <NavBarHome />
+      <section className="text-gray-600 body-font">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+            Welcome to the Privacy knowledge base,
+
+<br className="hidden lg:inline-block" />
+Navigate the digital world with confidence.
+
+            </h1>
+            <p className="mb-8 leading-relaxed">
+            With our knowledge base at your fingertips, you'll be equipped to make informed decisions about your privacy and take steps to safeguard your personal information. We're committed to providing you with the resources you need to navigate the digital world with confidence.
+            </p>
+            <div className="flex justify-center">
+              <button onClick className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              
+                Users
+              </button>
+            </div>
+          </div>
+          <div className="lg:max-w-lg lg:w-full md:w-500">
+            <img className="object-cover object-center rounded" alt="hero" src="https://cdn.discordapp.com/attachments/393437866166059008/1243338493665742858/Senza_titolo.png?ex=66511cb5&is=664fcb35&hm=fca472e6e01b443729ccec927d8c0ba7b8f0a6b8212e8ede3e61929592f25bc7&" />
+          </div>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg">
-          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content"></img>
-          <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-        </div>
-      </div>
+      </section>
     </div>
-  </div>
-</section>
-    </div>
-    )
+  );
 }
-
-export default Products
