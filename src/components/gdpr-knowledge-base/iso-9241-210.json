@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_gdpr_knowledge_base_iso_9241_210s",
+  "info": {
+    "displayName": "ISO 9241-210"
+  },
+  "options": {},
+  "attributes": {
+    "Nome_ISO": {
+      "type": "string"
+    },
+    "Id_ISO": {
+      "type": "integer"
+    },
+    "Descrizione": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_gdpr_knowledge_base_pbds",
+  "info": {
+    "displayName": "PBD",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Descrizione": {
+      "type": "text"
+    }
+  }
+}

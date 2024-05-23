@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gdpr_knowledge_bases",
+  "info": {
+    "singularName": "gdpr-knowledge-base",
+    "pluralName": "gdpr-knowledge-bases",
+    "displayName": "GDPR Knowledge Base",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome_Pattern": {
+      "type": "string"
+    },
+    "Strategie": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.strategie"
+    },
+    "Descrizione_pattern": {
+      "type": "component",
+      "repeatable": false,
+      "component": "gdpr-knowledge-base.descrizione-pattern"
+    },
+    "Contesto_pattern": {
+      "type": "component",
+      "repeatable": false,
+      "component": "gdpr-knowledge-base.contesto-pattern"
+    },
+    "MVC": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.mvc"
+    },
+    "ISO_9241_210": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.iso-9241-210"
+    },
+    "Articolo_gdpr": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.articolo-gdpr"
+    },
+    "Pbd": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.pbd"
+    },
+    "Owasp": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.owasp"
+    },
+    "Cwe": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.cwe"
+    },
+    "Esempi": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gdpr-knowledge-base.esempi"
+    }
+  }
+}

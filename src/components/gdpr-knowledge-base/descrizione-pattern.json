@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_gdpr_knowledge_base_descrizione_patterns",
+  "info": {
+    "displayName": "Descrizione Pattern",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Descrizione": {
+      "type": "text"
+    }
+  }
+}

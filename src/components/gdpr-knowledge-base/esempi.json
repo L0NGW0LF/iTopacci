@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_gdpr_knowledge_base_esempis",
+  "info": {
+    "displayName": "Esempi",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Descrizione": {
+      "type": "text"
+    }
+  }
+}
