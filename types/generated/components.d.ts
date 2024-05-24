@@ -63,6 +63,7 @@ export interface GdprKnowledgeBasePattern extends Schema.Component {
   collectionName: 'components_gdpr_knowledge_base_patterns';
   info: {
     displayName: 'Pattern';
+    description: '';
   };
   attributes: {
     Titolo: Attribute.String;
@@ -71,6 +72,7 @@ export interface GdprKnowledgeBasePattern extends Schema.Component {
     Descrizione: Attribute.Text;
     Esempio: Attribute.Text;
     Soluzione: Attribute.Text;
+    Contesto: Attribute.Text;
   };
 }
 

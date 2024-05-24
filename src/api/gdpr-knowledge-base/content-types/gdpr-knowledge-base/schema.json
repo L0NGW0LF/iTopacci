@@ -69,6 +69,9 @@
       "type": "component",
       "repeatable": false,
       "component": "gdpr-knowledge-base.pattern"
+    },
+    "Contesto": {
+      "type": "text"
     }
   }
 }

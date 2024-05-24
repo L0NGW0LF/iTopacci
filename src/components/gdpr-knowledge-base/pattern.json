@@ -1,7 +1,8 @@
 {
   "collectionName": "components_gdpr_knowledge_base_patterns",
   "info": {
-    "displayName": "Pattern"
+    "displayName": "Pattern",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -21,6 +22,9 @@
       "type": "text"
     },
     "Soluzione": {
+      "type": "text"
+    },
+    "Contesto": {
       "type": "text"
     }
   }

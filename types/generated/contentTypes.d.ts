@@ -392,6 +392,7 @@ export interface ApiGdprKnowledgeBaseGdprKnowledgeBase
     Soluzione: Attribute.Text;
     Problema: Attribute.Text;
     Pattern: Attribute.Component<'gdpr-knowledge-base.pattern'>;
+    Contesto: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
