@@ -1,7 +1,6 @@
 
 import React, { Fragment, useState } from 'react';
 import NavBar from '../components/navbar';
-import GDPRData from '../components/modal';
 import Link from 'next/link';
 
 
@@ -47,7 +46,7 @@ const GDPR = (props, itemId, nomePattern) => {
                     </div>
                   </div>
                   <div/>
-                  <GDPRData isVisible={showModal} onClose={() => setShowModal(false)} itemId={item.id} />
+                  {/* <GDPRData isVisible={showModal} onClose={() => setShowModal(false)} itemId={item.id} /> */}
                 </div>
               );
             })}
