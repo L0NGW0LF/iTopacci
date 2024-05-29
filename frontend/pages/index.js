@@ -27,7 +27,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-500">
-            <img className="object-cover object-center rounded" alt="hero" src="https://cdn.discordapp.com/attachments/393437866166059008/1243497215704698931/Senza_titolo.png?ex=6651b087&is=66505f07&hm=d518e2b18134c59de7eb5a8016bc3f360b2a67ecbfb8861593b2696d6e6f738d&" />
+            <img className="object-cover object-center rounded" alt="hero" src="home.png" />
           </div>
         </div>
       </section>
