@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import NavBar from '@/components/navbar';
 import { useSession } from 'next-auth/react';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Textarea, Input } from "@nextui-org/react";
@@ -32,7 +32,7 @@ export default function Feedback(props, idFetch) {
 
 
   const [message, setMessage] = useState(null)
-  
+
 
   const submit = async (event, idPattern, user) => {
     idPattern = idFetch;
@@ -111,7 +111,7 @@ export default function Feedback(props, idFetch) {
                   <>
                     <Button color="primary" onPress={onOpen}
                       type="submit"
-                      
+
                     >
                       Submit
                     </Button>

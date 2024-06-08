@@ -1,7 +1,7 @@
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn } from "next-auth/react"
 import NavBar from "@/components/navbar"
 import Link from 'next/link';
-import { Button, Textarea, Input, Card } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import style from "../styles/Home.module.css";
 import { useRouter } from 'next/router';
 

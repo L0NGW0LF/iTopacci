@@ -1,18 +1,30 @@
 import React from "react";
 import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signOut } from "next-auth/react"
 import { User, Button, Tooltip } from "@nextui-org/react";
+import getRole from "@/pages/api/retrieveRole";
+import { useState } from "react";
 
 
 
 
 
 const NavBar = () => {
+  
 
   const { data: session } = useSession();
+  const [userRole, setUserRole] = useState(null);
+
+
+
+getRole().then((resolvedUserRole) => {
+  setUserRole(resolvedUserRole); // This will also log "3"
+})
+
 
   return (
     <div>
+      
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link href={`/`}>
@@ -21,14 +33,24 @@ const NavBar = () => {
               <span className="ml-3 text-xl">iTopacci</span>
             </p>
           </Link>
+          
           <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
             <Link href={`Patterns`}>
               <p className="mr-5 hover:text-gray-900">Patterns</p>
             </Link>
-
+            <Link href={`/forum`}>
+              <p className="mr-5 hover:text-gray-900">Forum</p>
+            </Link>
+            <Link href={`/CheckList`}>
+              <p className="mr-5 hover:text-gray-900">Checklist</p>
+            </Link>         
             <Link href={`credits`}>
               <p className="mr-5 hover:text-gray-900"> Credits </p>
             </Link>
+            {userRole === 3  &&(<Link href={`/Administration`}>
+              <p className="mr-5 hover:text-gray-900"> Administration </p>
+            </Link>)}
+            
 
           </nav >
           {session && (
@@ -64,7 +86,7 @@ const NavBar = () => {
 
             </div>
           )}{
-            !session && (<Link href="Login">
+            !session && (<Link href={`Login`}>
               <div className=" mx-auto flex flex-wrap p-5 items-center">
                 <p className="mr-5 hover:text-gray-900">- Not Signed In -</p>
                 <Button color="default" variant="ghost">Login
@@ -83,5 +105,5 @@ const NavBar = () => {
   )
 }
 
-
 export default NavBar
+

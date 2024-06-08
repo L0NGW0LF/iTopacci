@@ -85,7 +85,7 @@ const GDPR = (props, itemId, nomePattern) => {
               {/* Caso in cui si vogliono vedere tutti i pattern */ }
               if (Favorites[0].Boolean === false) {
                 return (
-                  <div className="-my-8 divide-y-2 divide-gray-60 py-5">
+                  <div className="-my-8 divide-y-2 divide-gray-60 py-5" key={item.id}>
                     <div className="py-8 flex flex-wrap md:flex-nowrap">
                       <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                         <span className="mt-1 text-gray-500 text-sm">{itemId = item.id} - {nomePattern = item.attributes.Pattern.Titolo} </span>

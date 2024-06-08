@@ -6,7 +6,7 @@ function upload() {
   const { data: session } = useSession();
   return (
     <div>
-      <Uploadforum session={session}/>
+      <Uploadforum session={session} />
     </div>
   );
 }
