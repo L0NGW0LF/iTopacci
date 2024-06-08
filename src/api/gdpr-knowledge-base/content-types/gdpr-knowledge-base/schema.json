@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Titolo": {
-      "type": "string"
-    },
     "Strategie": {
       "type": "component",
       "repeatable": true,
@@ -50,28 +47,22 @@
       "repeatable": true,
       "component": "gdpr-knowledge-base.cwe"
     },
-    "Sommario": {
-      "type": "text"
-    },
-    "Descrizione": {
-      "type": "text"
-    },
-    "Esempio": {
-      "type": "text"
-    },
-    "Soluzione": {
-      "type": "text"
-    },
-    "Problema": {
-      "type": "text"
-    },
     "Pattern": {
       "type": "component",
       "repeatable": false,
       "component": "gdpr-knowledge-base.pattern"
     },
-    "Contesto": {
-      "type": "text"
+    "feedbacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "pattern"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "favoritepatterns"
     }
   }
 }

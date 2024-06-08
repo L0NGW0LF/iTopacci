@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface FeedbackFeedbackContent extends Schema.Component {
+  collectionName: 'components_feedback_feedback_contents';
+  info: {
+    displayName: 'Feedback Content';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface GdprKnowledgeBaseArticoloGdpr extends Schema.Component {
   collectionName: 'components_gdpr_knowledge_base_articolo_gdprs';
   info: {
@@ -98,9 +109,21 @@ export interface GdprKnowledgeBaseStrategie extends Schema.Component {
   };
 }
 
+export interface StrapiForumAnswer extends Schema.Component {
+  collectionName: 'components_strapi_forum_answers';
+  info: {
+    displayName: 'Answer';
+  };
+  attributes: {
+    Answer: Attribute.RichText;
+    Answername: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'feedback.feedback-content': FeedbackFeedbackContent;
       'gdpr-knowledge-base.articolo-gdpr': GdprKnowledgeBaseArticoloGdpr;
       'gdpr-knowledge-base.cwe': GdprKnowledgeBaseCwe;
       'gdpr-knowledge-base.iso-9241-210': GdprKnowledgeBaseIso9241210;
@@ -109,6 +132,7 @@ declare module '@strapi/types' {
       'gdpr-knowledge-base.pattern': GdprKnowledgeBasePattern;
       'gdpr-knowledge-base.pbd': GdprKnowledgeBasePbd;
       'gdpr-knowledge-base.strategie': GdprKnowledgeBaseStrategie;
+      'strapi-forum.answer': StrapiForumAnswer;
     }
   }
 }

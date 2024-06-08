@@ -362,6 +362,48 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiFeedbackFeedback extends Schema.CollectionType {
+  collectionName: 'feedbacks';
+  info: {
+    singularName: 'feedback';
+    pluralName: 'feedbacks';
+    displayName: 'Feedback';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    user: Attribute.Relation<
+      'api::feedback.feedback',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    pattern: Attribute.Relation<
+      'api::feedback.feedback',
+      'manyToOne',
+      'api::gdpr-knowledge-base.gdpr-knowledge-base'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feedback.feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feedback.feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGdprKnowledgeBaseGdprKnowledgeBase
   extends Schema.CollectionType {
   collectionName: 'gdpr_knowledge_bases';
@@ -375,7 +417,6 @@ export interface ApiGdprKnowledgeBaseGdprKnowledgeBase
     draftAndPublish: true;
   };
   attributes: {
-    Titolo: Attribute.String;
     Strategie: Attribute.Component<'gdpr-knowledge-base.strategie', true>;
     MVC: Attribute.Component<'gdpr-knowledge-base.mvc', true>;
     ISO_9241_210: Attribute.Component<'gdpr-knowledge-base.iso-9241-210', true>;
@@ -386,13 +427,17 @@ export interface ApiGdprKnowledgeBaseGdprKnowledgeBase
     Pbd: Attribute.Component<'gdpr-knowledge-base.pbd', true>;
     Owasp: Attribute.Component<'gdpr-knowledge-base.owasp', true>;
     Cwe: Attribute.Component<'gdpr-knowledge-base.cwe', true>;
-    Sommario: Attribute.Text;
-    Descrizione: Attribute.Text;
-    Esempio: Attribute.Text;
-    Soluzione: Attribute.Text;
-    Problema: Attribute.Text;
     Pattern: Attribute.Component<'gdpr-knowledge-base.pattern'>;
-    Contesto: Attribute.Text;
+    feedbacks: Attribute.Relation<
+      'api::gdpr-knowledge-base.gdpr-knowledge-base',
+      'oneToMany',
+      'api::feedback.feedback'
+    >;
+    users: Attribute.Relation<
+      'api::gdpr-knowledge-base.gdpr-knowledge-base',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -404,6 +449,40 @@ export interface ApiGdprKnowledgeBaseGdprKnowledgeBase
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::gdpr-knowledge-base.gdpr-knowledge-base',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStrapiForumStrapiForum extends Schema.CollectionType {
+  collectionName: 'strapi_forums';
+  info: {
+    singularName: 'strapi-forum';
+    pluralName: 'strapi-forums';
+    displayName: 'Strapi Forum';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Questions: Attribute.RichText;
+    Username: Attribute.String;
+    Answer: Attribute.Component<'strapi-forum.answer', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::strapi-forum.strapi-forum',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::strapi-forum.strapi-forum',
       'oneToOne',
       'admin::user'
     > &
@@ -639,6 +718,53 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -744,7 +870,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -773,6 +898,18 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    name: Attribute.String;
+    surname: Attribute.String;
+    favoritepatterns: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'api::gdpr-knowledge-base.gdpr-knowledge-base'
+    >;
+    feedbacks: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::feedback.feedback'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -783,53 +920,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::users-permissions.user',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
-  info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
       'oneToOne',
       'admin::user'
     > &
@@ -847,15 +937,17 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::feedback.feedback': ApiFeedbackFeedback;
       'api::gdpr-knowledge-base.gdpr-knowledge-base': ApiGdprKnowledgeBaseGdprKnowledgeBase;
+      'api::strapi-forum.strapi-forum': ApiStrapiForumStrapiForum;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
     }
   }
 }

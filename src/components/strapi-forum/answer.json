@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_strapi_forum_answers",
+  "info": {
+    "displayName": "Answer"
+  },
+  "options": {},
+  "attributes": {
+    "Answer": {
+      "type": "richtext"
+    },
+    "Answername": {
+      "type": "string"
+    }
+  }
+}

@@ -218,7 +218,7 @@ const GDPRView = (props, idFetch) => {
 
 export async function getServerSideProps(context) {
     let headers = {
-        Authorization: "Bearer 2ab650c3a1634ff8ada23d78b6e5ae25b01ae31b17fd825774ac24145d1baf06c10c4e8f921d8dc685068fb3f8202859b353508e3b454e187e0229c699d564231f2b76858b233eea194348fd069836f22d41d516aa61dc061b651dc665c28acac9a5fde693f0b4402d5a52f820427a8d697db74f25ea8243bceb782e3a583518",
+        Authorization: "Bearer 48935a33ac61ca32ab6c2125cd79f60dc13b6205c5c27821395c665e86bc86b19dfd2f92de4102f849e689346ae3e9afe0b46d7f59d3a6fce3b86af08dea0cf41eb97be494050e925ecd9ec9ed8636bbfcb1baebe44a937a723067122ccf943b1f1d93ad627fbd6fbcf9e09beb8231393a10eed6b6ab450a208664ec06d9ff2a",
     };
     let a = await fetch("http://localhost:1337/api/gdpr-knowledge-bases/?populate=*", { headers: headers });
     let GDPRView = await a.json();
