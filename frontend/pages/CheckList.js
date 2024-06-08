@@ -73,7 +73,7 @@ export default function Checklist() {
             <NavBar /> {/* Add the NavBar component */}
             <Card className="container px-5 py-24 mx-auto flex flex-wrap">
                 {steps.map((step) => (
-                    <div className="flex relative  pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+                    <div key={step.id} className="flex relative  pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
                         <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
                             <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div>
