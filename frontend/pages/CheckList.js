@@ -1,6 +1,6 @@
 import NavBar from '../components/navbar'; // Import the NavBar component
 import React from "react";
-import { Checkbox, Card, Divider } from '@nextui-org/react';
+import { Checkbox, Card } from '@nextui-org/react';
 
 
 export default function Checklist() {
