@@ -27,7 +27,7 @@ getRole().then((resolvedUserRole) => {
                                 <img alt="content"  class="object-cover object-center h-full w-full" src="logo_strapi.png" />
                             </div>
                             <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Strapi Content Manager</h2>
-                            <Link href={`localhost:1337`}>
+                            <Link href={`http://localhost:1337/admin`}>
                                 <Button color='secondary'>Go</Button>
                             </Link>
                         </div>

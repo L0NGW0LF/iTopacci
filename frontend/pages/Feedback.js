@@ -97,7 +97,8 @@ export default function Feedback(props, idFetch) {
 
                 <div className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
                   <h2 className="text-gray-900 text-lg mb-1 font-medium title-font space-x-0 flex">Pattern: {item.id} - {item.attributes.Pattern.Titolo}</h2>
-                  <p className="leading-relaxed mb-5 text-gray-600">Let us know your feedback</p>
+                  <p className="leading-relaxed text-gray-600">Let us know your feedback</p>
+                  <p className="leading-relaxed mb-5 font-bold text-gray-600">The feedbacks you leave are anonymous</p>
                   <div className="relative mb-4">
                     <label htmlFor="message" className="leading-7 text-sm text-gray-600">Title</label>
                     <Input variant='bordered' type="text" id="title" name="title" placeholder="Enter title" />

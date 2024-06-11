@@ -131,9 +131,9 @@ const GDPRView = (props, idFetch) => {
 
                       <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{item.attributes.Pattern.Titolo}</h1>
                       <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Pattern -  {item.id}</p>
-                      <div className="flex gap-4 items-center py-10">
+                      {session ? (<div className="flex gap-4 items-center py-10">
                         <>
-                          <Tooltip placement="bottom" content="Preferiti" color="danger">
+                          <Tooltip placement="bottom" content="Favorites" color="danger">
                             <Button onPress={addFavorite} variant="ghost" size="md" color="danger" endContent={<HeartIcon />}></Button></Tooltip>
                           <Modal isOpen={isOpen} onOpenChange={onOpenChange} backdrop="opaque" >
                             <ModalContent>
@@ -158,7 +158,7 @@ const GDPRView = (props, idFetch) => {
                           <Link href={`/Feedback?ID=${item.id}`}><Button size="md" color="success" variant="ghost" startContent={<UserIcon />}></Button>
                           </Link></Tooltip>
 
-                      </div>
+                      </div>) : (<p className="lg:w-1/2 w-full leading-relaxed text-gray-500 font-bold">Sign in to add Patterns to favorite and leave feedbacks</p>)}
                     </div>
 
 
